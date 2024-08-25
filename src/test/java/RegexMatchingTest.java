@@ -1,6 +1,4 @@
 import com.github.tomakehurst.wiremock.WireMockServer;
-import com.github.tomakehurst.wiremock.extension.responsetemplating.ResponseTemplateTransformer;
-import com.github.tomakehurst.wiremock.stubbing.StubMapping;
 import com.jayway.jsonpath.JsonPath;
 import org.json.JSONArray;
 import org.testng.annotations.AfterMethod;
@@ -23,7 +21,7 @@ public class RegexMatchingTest {
 
     @Test
     public void positiveRegexMatchingTest() {
-       String response = given()
+        String response = given()
                 .when()
                 .body("{\"username\": \"testwiremockuser\", \"password\": \"**@**\"}")
                 .post("http://localhost:8080/submit")
@@ -48,7 +46,7 @@ public class RegexMatchingTest {
     }
 
     @Test
-    public void getPositiveRegexMatchingTest(){
+    public void getPositiveRegexMatchingTest() {
         String response = given()
                 .when()
                 .get("http://localhost:8080/getUsers?Id=user123")
@@ -63,7 +61,7 @@ public class RegexMatchingTest {
     }
 
     @Test
-    public void getNegativeRegexMatchingTest(){
+    public void getNegativeRegexMatchingTest() {
         String response = given()
                 .when()
                 .get("http://localhost:8080/getUsers?Id=user")
@@ -75,7 +73,7 @@ public class RegexMatchingTest {
     }
 
     @AfterMethod()
-    public void tearDown(){
+    public void tearDown() {
         wireMockServer.stop();
     }
 }
