@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  wiremock1:
+    container_name: testing
+    image: wiremock/wiremock:2.35.0
+    ports:
+      - "8084:8080"  # Expose WireMock 1 on port 8081
+    volumes:
+      - ./testing/mappings:/home/wiremock/mappings
+      - ./testing/__files:/home/wiremock/__files
+
+  wiremock2:
+    container_name: developemnt
+    image: wiremock/wiremock:2.35.0
+    ports:
+      - "8085:8080"  # Expose WireMock 2 on port 8082
+    volumes:
+      - ./developemnt/mappings:/home/wiremock/mappings
+      - ./developemnt/__files:/home/wiremock/__files

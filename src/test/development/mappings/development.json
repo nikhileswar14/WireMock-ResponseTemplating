@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/api/v1/dev-resource"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "dev-response.json",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

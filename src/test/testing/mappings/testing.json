@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/api/v1/test-resource"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "test-response.json",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
