@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/getUsers",
+    "queryParameters": {
+      "Id": {
+        "matches": "^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "Id": "user123",
+        "name": "Nikhil",
+        "email": "nikhil@example.com"
+      }
+      ]
+  }
+}

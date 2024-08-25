@@ -1,0 +1,10 @@
+{
+  "request": {
+    "method": "ANY",
+    "urlPathPattern": "/random"
+  },
+  "response": {
+    "body": "{ \n \"Numbers\": {{range 3 8}}, \n \"Time\": {{now}}, \n \"LocalHostName\": {{hostname}} \n}",
+    "transformers": ["response-template"]
+  }
+}

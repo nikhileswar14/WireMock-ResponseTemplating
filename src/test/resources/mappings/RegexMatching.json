@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/submit",
+    "bodyPatterns": [{
+      "matchesJsonPath": {
+        "expression" :"$.username",
+        "contains" : "wiremock",
+        "expression" : "$.password",
+        "contains" : "@"
+      }
+    }
+
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body": "Request body matched with regex!"
+  }
+}

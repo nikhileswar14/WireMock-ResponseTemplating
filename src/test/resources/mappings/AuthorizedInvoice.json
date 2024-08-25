@@ -1,0 +1,12 @@
+{
+  "scenarioName": "Invoice Access",
+  "requiredScenarioState": "Authorized",
+  "request": {
+    "method": "GET",
+    "urlPath": "/invoices"
+  },
+  "response": {
+    "status": 200,
+    "body": "[{\"id\":1,\"amount\":100},{\"id\":2,\"amount\":200}]"
+  }
+}

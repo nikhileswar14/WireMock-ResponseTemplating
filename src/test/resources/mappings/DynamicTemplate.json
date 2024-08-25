@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPathPattern": "/check",
+    "bodyPatterns" : [
+      {
+        "matchesJsonPath": "$[*].todo_id"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "body":"[ {{#each (jsonPath request.body '$') as |todo|}} \n{ \n\"todo_id\": {{#if (eq todo.todo_id null)}}{{randomValue length=1 type='NUMERIC'}}{{else}}{{todo.todo_id}}{{/if}} \n}{{#unless @last}},{{/unless}}{{/each}} \n]",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers" : ["response-template"]
+  }
+}

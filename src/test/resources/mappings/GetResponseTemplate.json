@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/getUser",
+    "queryParameters":{
+      "username" : {
+        "matches" : ".*"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "{ \"Hello {{request.query.username}}\" }",
+    "transformers": ["response-template"]
+  }
+}

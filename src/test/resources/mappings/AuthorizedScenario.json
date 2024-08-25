@@ -1,0 +1,13 @@
+{
+  "scenarioName": "Invoice Access",
+  "requiredScenarioState": "Started",
+  "newScenarioState": "Authorized",
+  "request": {
+    "method": "GET",
+    "urlPath": "/auth"
+  },
+  "response": {
+    "status": 200,
+    "body": "Authorization successful"
+  }
+}
